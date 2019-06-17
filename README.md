@@ -19,18 +19,23 @@ This is a machine learning model that can detect dangerous driving using telemat
 * **Approach 1**: Statistical summary of telematics data <br>
 * **Approach 2**: Count outlying driving behaviours based on telematics readings <br>
 * **Approach 3**: Sliding windows aggregated features 
-2. Blended (stacked) models are used in the prediction pipeline, which consists of 3 layers: <br>
+2. Six blended (stacked) models are used in the prediction pipeline, which consists of 3 layers: <br>
 * **Layer 1**: 2 weak learners <br>
 * **Layer 2**: 3 strong learners <br>
-* **Layer 3**: 1 meta learner 
+* **Layer 3**: 1 meta learner
 3. The model performance on self-define hold-out test dataset achieved:
 * **ROC Score**: 0.7513
 * **Accuracy Score**: 0.7853
 
+**NOTE: Please refer to *documentation.ipynb* for more details about this project.**
+
 ## Notes To Evaluators
-First, clone the repository and install the required packages
+(Tested on Python Version: 3.7)
+
+First, clone the repository and install the dependencies.
 ```sh
 git clone https://github.com/kfengtee/grab-aiforsea-safety.git
+cd grab-aiforsea-safety
 pip install -r requirements.txt
 ```
 
@@ -42,8 +47,8 @@ import predict_model
 
 classifier = predict_model.DangerousDrivingClassifier('model_weights') # load the pre-trained weights
 
-# output is a DataFrame containing bookingID, probability of dangerous driving, and predicted label
-output = classifier.predict("dir_to_raw_telematics_data") 
+# replace "dir_to_raw_telematics_data" with actual hold-out test data directory
+output = classifier.predict("dir_to_raw_telematics_data") # output: DataFrame, columns = ['bookingID', 'prob', 'label']
 ```
 Please look at **demo.ipynb** for more demonstration details. 
 
