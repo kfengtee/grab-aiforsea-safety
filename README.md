@@ -1,4 +1,4 @@
-# Submission For AI For SEA Safety
+# Submission For "AI For SEA: Safety"
 
 <p align=center>
     <a href="#readme">
