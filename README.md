@@ -13,6 +13,7 @@ This is a machine learning model that can detect dangerous driving using telemat
 2. Python library to predict dangerous driving: **predict_model.py**
 3. Pre-trained model weights directory: **model_weights/**
 4. Demonstratation of python library: **demo.ipynb**
+5. Reusable scripts (Model searching tools): **utils.ipynb**
 
 ## Highlights
 1. A total of **52 features** are generated from raw telematics data using three approaches: <br>
